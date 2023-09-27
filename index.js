@@ -1,6 +1,12 @@
-// Arrays
-let selectedColors = ["white", "green"];
-selectedColors[2] = 7;
-console.log(selectedColors.length);
+function greet(name,lastName) { // name lastName parameter
+  console.log("Hello, " + name  + " " + lastName);
+}
 
-// Massivning turi ham object hisoblanadi va uning ichidagi qiymatlari ham dynamic hisoblanadi va uning o'lchami ham dynamic
+
+function square(num) {
+   return num * num;
+}
+
+greet("John","Doe"); // John is argument argument
+greet("Alex"); // agar ikkinchi argumentni bermasak u undefined bo'ladi.
+console.log(square(2));
