@@ -1,27 +1,11 @@
-let word = "intelligent";
+// for loop
 
-switch (word) {
-  case "pencil":
-    console.log("Qalam");
-    break;
-  case "book":
-    console.log("Kitob");
-    break;
-  case "intelligent":
-  case "smart":
-  case "clever":
-    console.log("Clever");
-    
-  default:
-    console.log("Not Found");
-}
-
-// let word = "pencil";
-
-// if (word === "pencil") {
-//   console.log("Qalam");
-// } else if (word === "book") {
-//   console.log("Kitob");
-// } else {
-//   console.log("Not Found");
+// for (let i = 1; i <= 5; i++) {
+//   if (i % 2 !== 0) {
+//     console.log(i);
+//   }
 // }
+
+for (let i = 1; i < 100; i *= 3) {
+  console.log(i);
+}
