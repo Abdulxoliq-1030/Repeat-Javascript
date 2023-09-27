@@ -1,18 +1,14 @@
-let name;
-console.log(name); // undefined
+// Javascript da Ikki xil turdagi o'zgaruvchilar bor Primitive and Reference
 
-let name1 = "John";
+// Primitive types: String, Number, Boolean, undefined, null
 
-// 1. Kalit so'z bo'lmasligi kerak
-// let,for,it,else...
-// 2. Raqam bilan boshlanishi mumkin emas
-// 1name, 76firstName
-// 3. Probel yoki chiziqcha ishlatish ham mumkin emas
-// 4. Case-sensitive hisoblanadi
-// 5.Mazmunli bo'lishi kerak
-// x, abc, myVar they names not best practise
+let name = "John"; // String
+let age = 13; // Number
+let isMarried = false; // Boolean
+let firstName = undefined; // undefined if some variables are met but it doesn't have value this variable get undefined
+let selectedColor = null; // null agar bironta mijoz kiyimni rangini tanlamoqchi bo'lsa boshida uning rangi yo'q bo'ladi shu holatda yo'q bo'lib turishi uchun null ishlatiladi. Asosan o'zgaruvchini qiymatini tozalab tashlash uchun ishlatiladi.
 
-const pi = 3.14; // we never change this value because it's constant
-console.log(pi);
+// Dasturlash tillari ikki xil bo'ladi static va dynamic
+// Static dasturlash tillarida o'zgaruvchi berilayotgan vaqtida uning typi beriladi dynamic tillarda esa runtime vaqtida bilinadi dynamic tillar typini runtime vaqtida aniqlab oladi javascript tili ham dynamic til xisoblanadi
 
 
