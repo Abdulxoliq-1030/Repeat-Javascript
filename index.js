@@ -1,12 +1,27 @@
-function greet(name,lastName) { // name lastName parameter
-  console.log("Hello, " + name  + " " + lastName);
+let word = "intelligent";
+
+switch (word) {
+  case "pencil":
+    console.log("Qalam");
+    break;
+  case "book":
+    console.log("Kitob");
+    break;
+  case "intelligent":
+  case "smart":
+  case "clever":
+    console.log("Clever");
+    
+  default:
+    console.log("Not Found");
 }
 
+// let word = "pencil";
 
-function square(num) {
-   return num * num;
-}
-
-greet("John","Doe"); // John is argument argument
-greet("Alex"); // agar ikkinchi argumentni bermasak u undefined bo'ladi.
-console.log(square(2));
+// if (word === "pencil") {
+//   console.log("Qalam");
+// } else if (word === "book") {
+//   console.log("Kitob");
+// } else {
+//   console.log("Not Found");
+// }
