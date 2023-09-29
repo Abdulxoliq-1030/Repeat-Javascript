@@ -1,39 +1,16 @@
-// Reference types => Object, function, Array
-// Value types  => Number, String, Boolean, Undefined, null, Symbol
+const circle = {
+  radius: 1,
+  draw() {
+    console.log("doira");
+  },
+};
 
-let a = 5;
-let b = a;
-a = 10;
-console.log(a);
-console.log(b);
-// Primitive larda o'zgaruvchilar mustaqil bo'ladi bir biriga bog'lanmaydi bularning qiymati hotirada o'zida saqlanadi
+for (let key in circle) console.log(key, circle[key]);
 
-let x = { value: 10 }; // bu joyda x ga value emas uning xotiradagi addresi berilgan
-let y = x; // bu joyda y ga ham huddi shunday qilngan
-x.value = 20;
-console.log(x);
-console.log(y); // bular ikkalasi teng chunki bular bitta joydagi hotirada turibdi
-// Reference larda qiymatlari objectning o'zida emas boshqa maxsus joyda saqlanadi o'zgaruvchida esa qiymatning joylashgan manzili  yani o'sha qiymatga bo'gan ko'rsatgich saqlanadi shuning uchun ham objectdan nusxa olsak yani x ni y ga berganimizda y ga x ni hotiradagi qiymatiga bo'lgan ko'rsatgich beriladi shundan keyin x ham y ham bitta joydan kelayotgani uchun bir xil bo'lib qoladi qiymatlari
+// for (let key of circle) console.log(key, [circle[key]]); // bunda hatolik beradi chunki objectlar not iterable shuning uchun bunda hatolik beradi for of faqat iterablelarda ishlatiladi
 
-// Primitive lardan nusxa olinganda aynan qiymatidan nusxa olinadi bu narsa byValue deyiladi
+for (let key of Object.keys(circle)) console.log(key); // lekin bunda ishlaydi. Object.keys() bizga hossalarni nomini chiqarib beradi.Agar ularning qiymatini ham olmoqchi bo'lsak Object.entries() dan foydalanishimiz kerak.
 
-// Reference larda esa ularning addresidan nusxa olinadi bu byReference deyiladi objectlarda qiymatni o'zi emas balki xotiradagi addresi saqlanganligi uchun undan nusxa olinganda uning adresidan nusxa olinadi
+for (let entry of Object.entries(circle)) console.log(entry); // objectning qiymatlarini olib beradi bu massivdan tashkil topgan massiv qaytarib beradi har bir massivni key value pare ko'rinishda qaytarib beradi
 
-let number = 1;
-function increase(number) {
-  number++; // bu bilan tashqaridagi number teng emas buni oshirsak faqat shu 2 bo'ladi tashqaridagi number o'zgarmaydi u 1 qaytaradi. chunki ular primitive typelar xisoblanadi.
-  console.log("inside: ", number);
-}
-increase(number);
-console.log("outside ", number);
-
-
-
-let obj = { value: 1 };
-function increase(obj) {
-  obj.value++;
-  console.log("inside: ", obj);
-}
-
-increase(obj);
-console.log("outside: ", obj);
+if ("circle" in circle) console.log("Bor"); // ichida shu nomli xossa borligini tekshirish
