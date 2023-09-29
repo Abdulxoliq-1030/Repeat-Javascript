@@ -1,23 +1,26 @@
-// For in and For of
+// factory function
+function createCircle(radius) {
+  return {
+    radius,
+    draw() {
+      console.log("doira");
+    },
+  };
+}
 
-// For in => Object ni hossalari bo'ylab aylanadi
-// For of => Objectni elementlari bo'ylab yurib chiqadi
+// constructor function
+function Circle(radius) {
+  this.radius = radius;
+  this.draw = function () {
+    console.log("doira");
+  };
+}
 
-const person = {
-  name: "Jamol",
-  age: 37,
+const circle = new Circle(1);
+circle.color = "green";
+circle.move = function () {
+  // ...
 };
+delete circle.color;
 
-for (let key in person) {
-  console.log(key, person[key]);
-}
-
-let colors = ["white", "black", "green", "blue"];
-
-for (let index in colors) {
-  console.log(index, colors[index]);
-}
-
-for (let color of colors) {
-  console.log(color);
-} // this useful array elements
+console.log(circle);
