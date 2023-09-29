@@ -20,6 +20,6 @@ function Circle(radius) {
 
 Circle.call({}, 4);
 
-Circle.apply({}, [4]);
+Circle.apply({}, [5]);
 
 // Javascriptda funksiyalar ham object hisoblanadi.
