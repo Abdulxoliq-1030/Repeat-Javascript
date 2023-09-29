@@ -1,31 +1,25 @@
-// factory function
-function createCircle(radius) {
-  return {
-    radius,
-    draw() {
-      console.log("doira");
-    },
-  };
-}
-
-// constructor function
 function Circle(radius) {
   this.radius = radius;
   this.draw = function () {
-    console.log("doira");
+    console.log("draw");
   };
 }
 
-// const circle = new Circle(1);
-// circle.color = "green";
-// circle.move = function () {
-//   // ...
+// const Circle2 = new Function(
+//   "radius",
+//   `
+// this.radius = radius;
+// this.draw = function () {
+//   console.log("draw");
 // };
+// `
+// );
 
-const circle1 = createCircle(1);
-const circle2 = new Circle(1);
+// const circle = new Circle2(3);
+// console.log(circle);
 
-console.log(circle1.constructor);
-console.log(circle2.constructor);
+Circle.call({}, 4);
 
-// Har qanday objectning konstructor hossasi bo'ladi bu konstructor bu objectning asosiy objectiga yo'l ko'rsatib beradi
+Circle.apply({}, [4]);
+
+// Javascriptda funksiyalar ham object hisoblanadi.
