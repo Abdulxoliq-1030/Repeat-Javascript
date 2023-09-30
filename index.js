@@ -1,10 +1,10 @@
-function add(a, b, callback) {
-  console.log(`${a} va ${b} larning yig'indisi ${a + b}`);
-  callback();
+async function getCustomerName() {
+  let name = await "Ibrohim";
+  console.log(name);
+  return name;
 }
 
-function display() {
-  console.log(`Bu qator qo'shuvdan keyin chiqadi.`);
-}
-
-add(3, 4, display);
+// getCustomerName().then((data) => console.log(data));
+console.log(1); // 1
+getCustomerName(); // 3
+console.log(2); // 2
