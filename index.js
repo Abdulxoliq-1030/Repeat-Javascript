@@ -1,22 +1,20 @@
-function sayHello() {
-  let greeting = "Hello";
+// function start() {
+//   for (let i = 0; i < 5; i++) {
+//     console.log(i);
+//     if (true) {
+//       var color = "White"; // local issue
+//     }
+//   }
+//   //   console.log(color); it works
+// }
 
-  if (true) {
-    const farewell = "Good Bye";
-  }
-  console.log(farewell);
+// start();
 
-  for (let i = 0; i < 5; i++) {
-    console.log(i);
-  }
-}
+// Var bilan Let ning farqi ularning scopelar orasida ishlashida let bitta scope bilan chegaralanadi misol uchun forning blocki bilan lekin var ning blocki esa butun boshli funksiya bilan chegaralanadi va bu juda yomon bu muammolarga olib kelishi mumkin
 
-// Local va global o'zgaruvchilar agar o'zgaruvchi funksiya yoki if, for blocklarini ichida bo'lishi mumkin va bu holatda uni tashqarida ishlata olmaymiz
+var color = "green";
+let age = 36;
 
-// let va const bilan e'lon qilingan o'zgaruvchilarni ko'rinish doirasi ular e'lon qilingan {} larni orasidagina ishlaydi tashqarida ishlata olmaymiz va ular local o'zgaruvchilar deb ataladi
+// Agar var o'zgaruvchini funksiyadan tashqarida eng yuqorida e'lon qilsak u browserning window objectiga biriktirib qo'yiladi
 
-sayHello();
-
-function sayHi() {
-  let greeting = "hi";
-}
+// Agar bunday qilinadigan bo'lsa window objectining boshqa methodlari bilan biz e'lon qilgan hossamiz bir xil bo'lib qolib conflict bo'lishi mumkin bunday qilmaslk uchun umuman var ni ishlatmasligimiz kerak
