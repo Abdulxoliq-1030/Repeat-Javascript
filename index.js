@@ -1,11 +1,11 @@
-let numbers = [7, 3, 5, 8];
-//
-// let sum = 0;
+let numbers = arrayFromRange(1, 5);
+console.log(numbers);
 
-// for (let number of numbers) sum += number; // arraydagi barcha qiymatlarni qo'shib beradi
+function arrayFromRange(min, max) {
+  let result = [];
 
-const sum = numbers.reduce((acc, currentVal) => {
-  return acc + currentVal;
-}, 0);
-
-console.log(sum);
+  for (let i = min; i <= max; i++) {
+    result.push(i);
+  }
+  return result;
+}
