@@ -1,23 +1,13 @@
-// let numbers = [2, 3, 5, 1, 4];
+let numbers = [2, -3, 5, 1 - 4];
+let filtered = numbers.filter((number) => number >= 0); // yangi array qaytaradi
 
-// const isAllPositive = numbers.every((number) => {
-//   return number >= 0;
-// });
+// const items = filtered.map((number) => `<li>${number}</li>`);
+// let html = `<ul>
+// ${items.join("")}
+// </ul>`;
 
-// console.log(isAllPositive);
-
-// let numbers2 = [2, 3, 5, 1, 4];
-
-// const atLeastOnePositive = numbers.some((number) => {
-//   return number >= 0;
-// });
-
-// console.log(atLeastOnePositive);
-
-let numbers = [2, 3, -5, 1, 4];
-
-let filtered = numbers.filter((number) => {
-  return number >= 0;
+let items = filtered.map((number) => {
+  return { value: number };
 }); // yangi array qaytaradi
 
-console.log(filtered);
+console.log(items);
