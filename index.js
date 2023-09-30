@@ -1,13 +1,11 @@
-let numbers = [2, -3, 5, 1 - 4];
-let filtered = numbers.filter((number) => number >= 0); // yangi array qaytaradi
+let numbers = [7, 3, 5, 8];
+//
+// let sum = 0;
 
-// const items = filtered.map((number) => `<li>${number}</li>`);
-// let html = `<ul>
-// ${items.join("")}
-// </ul>`;
+// for (let number of numbers) sum += number; // arraydagi barcha qiymatlarni qo'shib beradi
 
-let items = filtered.map((number) => {
-  return { value: number };
-}); // yangi array qaytaradi
+const sum = numbers.reduce((acc, currentVal) => {
+  return acc + currentVal;
+}, 0);
 
-console.log(items);
+console.log(sum);
