@@ -1,33 +1,23 @@
-// Array methods
+// Array methods 2
 
-let numbers = [3, 4];
-numbers.push(5, 6); // mutable arrayni oxiriga qo'shadi yangi element
-numbers.unshift(1); // mutable arrayni boshiga qo'shadi yangi element
-numbers.splice(1, 0, 2); // mutable 1 start, 0 delete count, 2 beeing placed
+let first = [1, 2, 3];
+let second = [4, 5, 6];
 
-let number = numbers.pop(); // oxiridagi elementni o'chiradi
-console.log("Number: ", number); // 6 Oxiridagi elementni o'chirib tashlaydi va o'sha o'chirilgan raqamni qaytaradi mutable bu ham
-console.log("Numbers: ", numbers);
-let first = numbers.shift(); // boshidagi elementni o'chiradi
+const concatArrays = first.concat(second); // this combine 2 array return new array and immutable
+console.log(concatArrays);
 
-console.log("First Number: ", first); // 1 boshidagi elementni o'chirib tashlaydi va arrayni o'zgartiradi
+const sliced = concatArrays.slice(2); // [ 3, 4, 5, 6 ] extracts from the given index and returns a new array
+console.log(sliced);
 
-numbers.splice(2, 1); // orasidagi elementni o'chiradi
-console.log("Numberss: ", numbers); // [2,4,5] orasidagi elementni o'chiradi
+// Agar objectlar bilan ishlaydigan bo'lsak unda bu methodlar mutable bo'lib qoladi chunki object bo'lsa uning o'ziga emas uning addresini o'zgartiradi
 
-console.log(numbers.indexOf(3)); // 2 return index number
-// If we give a non-existent number, it will return -1
+const arr = ["Hello", "Salom", "Hi", "How are you", 5];
 
-console.log(numbers.includes(3)); // true
+for (let item of arr) {
+  console.log(item);
+}
 
-console.log(numbers);
-
-const laptops = [
-  { id: 1, cpu: "i5", ram: "8gb", hdd: "500gb" },
-  { id: 2, cpu: "i7", ram: "16gb", hdd: "1tb" },
-  { id: 3, cpu: "i9", ram: "32gb", hdd: "2tb" },
-];
-
-let laptop = laptops.find((laptop) => laptop.cpu === "i9");
-
-console.log(laptop);
+arr.forEach((item, idx) => {
+  // elementni aylanib qaytaradi yangi array qaytarmaydi
+  console.log(item, idx);
+});
