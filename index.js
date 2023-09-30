@@ -1,20 +1,21 @@
-// function start() {
-//   for (let i = 0; i < 5; i++) {
-//     console.log(i);
-//     if (true) {
-//       var color = "White"; // local issue
-//     }
-//   }
-//   //   console.log(color); it works
-// }
+// This method ichida ishlatilsa this o'sha method turgan objectni ifodalaydi agar tashqarida tursa u global objectni ifodalaydi
+function Game(title) {
+  this.title = title;
+  console.log(this);
+}
 
-// start();
+const roblox = new Game("roblox");
 
-// Var bilan Let ning farqi ularning scopelar orasida ishlashida let bitta scope bilan chegaralanadi misol uchun forning blocki bilan lekin var ning blocki esa butun boshli funksiya bilan chegaralanadi va bu juda yomon bu muammolarga olib kelishi mumkin
+// If this create a new object,this express a new object
 
-var color = "green";
-let age = 36;
+const game = {
+  title: "needforspeed",
+  cars: ["ferrari", "lamborghini", "porsche", "bmw"],
+  showCars() {
+    this.cars.forEach((car) => {
+      console.log(this.title, car);
+    });
+  },
+};
 
-// Agar var o'zgaruvchini funksiyadan tashqarida eng yuqorida e'lon qilsak u browserning window objectiga biriktirib qo'yiladi
-
-// Agar bunday qilinadigan bo'lsa window objectining boshqa methodlari bilan biz e'lon qilgan hossamiz bir xil bo'lib qolib conflict bo'lishi mumkin bunday qilmaslk uchun umuman var ni ishlatmasligimiz kerak
+game.showCars();
