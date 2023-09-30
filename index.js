@@ -1,28 +1,33 @@
-// console.log(Math.round(4.3)); // 4
-// console.log(Math.pow(8, 2)); // 64
-// console.log(Math.random()); // return a random number
+// Array methods
 
-let greeting = "Hello"; // String primitive
-let greeting2 = new String(); // String object
-console.log(greeting.length);
-console.log(greeting.includes("He")); // true
-console.log(greeting.startsWith("Hello")); // true
-console.log(greeting.endsWith("o")); // true
-console.log(greeting.indexOf("llo")); // 2
-console.log(greeting.replace("Hel", "Sal"));
+let numbers = [3, 4];
+numbers.push(5, 6); // mutable arrayni oxiriga qo'shadi yangi element
+numbers.unshift(1); // mutable arrayni boshiga qo'shadi yangi element
+numbers.splice(1, 0, 2); // mutable 1 start, 0 delete count, 2 beeing placed
 
-const greeting3 = " Hello there ";
+let number = numbers.pop(); // oxiridagi elementni o'chiradi
+console.log("Number: ", number); // 6 Oxiridagi elementni o'chirib tashlaydi va o'sha o'chirilgan raqamni qaytaradi mutable bu ham
+console.log("Numbers: ", numbers);
+let first = numbers.shift(); // boshidagi elementni o'chiradi
 
-console.log(greeting3.trim());
+console.log("First Number: ", first); // 1 boshidagi elementni o'chirib tashlaydi va arrayni o'zgartiradi
 
-let text = "Salomlashishlil uchun 'Assalom alaykum' deb aytasiz.";
-console.log(text);
+numbers.splice(2, 1); // orasidagi elementni o'chiradi
+console.log("Numberss: ", numbers); // [2,4,5] orasidagi elementni o'chiradi
 
-console.log(text.split(" "));
+console.log(numbers.indexOf(3)); // 2 return index number
+// If we give a non-existent number, it will return -1
 
-let text2 = `this is my
-'first' message`;
+console.log(numbers.includes(3)); // true
 
-console.log(text2);
+console.log(numbers);
 
-// String objectlari immutable hisoblanadi string metodlarini ishlashi natijasida yangi string qaytariladi
+const laptops = [
+  { id: 1, cpu: "i5", ram: "8gb", hdd: "500gb" },
+  { id: 2, cpu: "i7", ram: "16gb", hdd: "1tb" },
+  { id: 3, cpu: "i9", ram: "32gb", hdd: "2tb" },
+];
+
+let laptop = laptops.find((laptop) => laptop.cpu === "i9");
+
+console.log(laptop);
